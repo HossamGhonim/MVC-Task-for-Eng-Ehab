@@ -6,7 +6,7 @@ using Eng_Ehab_Task.Models;
 
 namespace Eng_Ehab_Task.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class VillagesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -26,12 +26,14 @@ namespace Eng_Ehab_Task.Controllers
             return Json(villages);
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Villages.Include(v => v.City);
             return View(await applicationDbContext.ToListAsync());
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["CityID"] = new SelectList(_context.Cities, "CityID", "CityName");
@@ -40,6 +42,7 @@ namespace Eng_Ehab_Task.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("VillageID,VillageName,CityID")] Village village)
         {
             if (ModelState.IsValid)
@@ -58,6 +61,7 @@ namespace Eng_Ehab_Task.Controllers
             return View(village);
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -70,6 +74,7 @@ namespace Eng_Ehab_Task.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("VillageID,VillageName,CityID")] Village village)
         {
             if (id != village.VillageID) return NotFound();
@@ -98,6 +103,7 @@ namespace Eng_Ehab_Task.Controllers
             return View(village);
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -112,6 +118,7 @@ namespace Eng_Ehab_Task.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var village = await _context.Villages.FindAsync(id);

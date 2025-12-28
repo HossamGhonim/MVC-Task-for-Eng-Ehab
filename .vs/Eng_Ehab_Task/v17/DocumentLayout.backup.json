@@ -1,118 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|d:\\eng_ehab_task\\eng_ehab_task\\eng_ehab_task\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|solutionrelative:eng_ehab_task\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|d:\\eng_ehab_task\\eng_ehab_task\\eng_ehab_task\\controllers\\villagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|solutionrelative:eng_ehab_task\\controllers\\villagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|d:\\eng_ehab_task\\eng_ehab_task\\eng_ehab_task\\controllers\\governoratescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|solutionrelative:eng_ehab_task\\controllers\\governoratescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|d:\\eng_ehab_task\\eng_ehab_task\\eng_ehab_task\\controllers\\citiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|solutionrelative:eng_ehab_task\\controllers\\citiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|d:\\eng_ehab_task\\eng_ehab_task\\eng_ehab_task\\views\\persons\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|solutionrelative:eng_ehab_task\\views\\persons\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|d:\\eng_ehab_task\\eng_ehab_task\\eng_ehab_task\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DA7906C-C262-4904-8190-A10A86D87CC6}|Eng_Ehab_Task\\Eng_Ehab_Task.csproj|solutionrelative:eng_ehab_task\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Eng_Ehab_Task\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Eng_Ehab_Task\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAcAAAAAMzMzMzMLwA8AAABsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-28T15:29:45.421Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VillagesController.cs",
-              "DocumentMoniker": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Controllers\\VillagesController.cs",
-              "RelativeDocumentMoniker": "Eng_Ehab_Task\\Controllers\\VillagesController.cs",
-              "ToolTip": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Controllers\\VillagesController.cs",
-              "RelativeToolTip": "Eng_Ehab_Task\\Controllers\\VillagesController.cs",
-              "ViewState": "AgIAAHMAAACAzMzMzMwowIAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-28T14:46:26.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GovernoratesController.cs",
-              "DocumentMoniker": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Controllers\\GovernoratesController.cs",
-              "RelativeDocumentMoniker": "Eng_Ehab_Task\\Controllers\\GovernoratesController.cs",
-              "ToolTip": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Controllers\\GovernoratesController.cs",
-              "RelativeToolTip": "Eng_Ehab_Task\\Controllers\\GovernoratesController.cs",
-              "ViewState": "AgIAAE8AAABAZmZmZmYwwGMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-28T14:46:07.083Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CitiesController.cs",
-              "DocumentMoniker": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Controllers\\CitiesController.cs",
-              "RelativeDocumentMoniker": "Eng_Ehab_Task\\Controllers\\CitiesController.cs",
-              "ToolTip": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Controllers\\CitiesController.cs",
-              "RelativeToolTip": "Eng_Ehab_Task\\Controllers\\CitiesController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAHQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-28T14:45:46.31Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Views\\Persons\\Create.cshtml",
-              "RelativeDocumentMoniker": "Eng_Ehab_Task\\Views\\Persons\\Create.cshtml",
-              "ToolTip": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Views\\Persons\\Create.cshtml",
-              "RelativeToolTip": "Eng_Ehab_Task\\Views\\Persons\\Create.cshtml",
-              "ViewState": "AgIAABoAAACAMzMzMzMbwCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-28T14:41:32.589Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Person.cs",
-              "DocumentMoniker": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Models\\Person.cs",
-              "RelativeDocumentMoniker": "Eng_Ehab_Task\\Models\\Person.cs",
-              "ToolTip": "D:\\Eng_Ehab_Task\\Eng_Ehab_Task\\Eng_Ehab_Task\\Models\\Person.cs",
-              "RelativeToolTip": "Eng_Ehab_Task\\Models\\Person.cs",
-              "ViewState": "AgIAABoAAACAZmZmZmYqwCsAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-28T14:41:16.052Z"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

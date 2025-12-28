@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Eng_Ehab_Task")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb2d842eaa08c0b078c61f840afea41ee18d2421")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70a7fcf465fc82f28c54c62c8af054b79ef76c17")]
 [assembly: System.Reflection.AssemblyProductAttribute("Eng_Ehab_Task")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Eng_Ehab_Task")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

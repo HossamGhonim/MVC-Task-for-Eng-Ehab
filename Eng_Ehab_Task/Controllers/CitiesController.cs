@@ -6,7 +6,7 @@ using Eng_Ehab_Task.Models;
 
 namespace Eng_Ehab_Task.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class CitiesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -44,6 +44,12 @@ namespace Eng_Ehab_Task.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (_context.Cities.Any(c => c.CityName == city.CityName && c.GovernorateID == city.GovernorateID))
+                {
+                    ModelState.AddModelError("CityName", "This City already exists in the selected Governorate.");
+                    ViewData["GovernorateID"] = new SelectList(_context.Governorates, "GovernorateID", "GovernorateName", city.GovernorateID);
+                    return View(city);
+                }
                 _context.Add(city);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -72,6 +78,12 @@ namespace Eng_Ehab_Task.Controllers
             {
                 try
                 {
+                    if (_context.Cities.Any(c => c.CityName == city.CityName && c.GovernorateID == city.GovernorateID && c.CityID != city.CityID))
+                    {
+                        ModelState.AddModelError("CityName", "This City already exists in the selected Governorate.");
+                        ViewData["GovernorateID"] = new SelectList(_context.Governorates, "GovernorateID", "GovernorateName", city.GovernorateID);
+                        return View(city);
+                    }
                     _context.Update(city);
                     await _context.SaveChangesAsync();
                 }
@@ -105,6 +117,8 @@ namespace Eng_Ehab_Task.Controllers
             var city = await _context.Cities.FindAsync(id);
             if (city != null)
             {
+                var villages = _context.Villages.Where(v => v.CityID == id).ToList();
+                _context.Villages.RemoveRange(villages);
                 _context.Cities.Remove(city);
                 await _context.SaveChangesAsync();
             }

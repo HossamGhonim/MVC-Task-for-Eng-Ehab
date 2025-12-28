@@ -5,7 +5,7 @@ using Eng_Ehab_Task.Models;
 
 namespace Eng_Ehab_Task.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class GovernoratesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -31,6 +31,11 @@ namespace Eng_Ehab_Task.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (_context.Governorates.Any(g => g.GovernorateName == governorate.GovernorateName))
+                {
+                    ModelState.AddModelError("GovernorateName", "This Governorate already exists.");
+                    return View(governorate);
+                }
                 _context.Add(governorate);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -57,6 +62,11 @@ namespace Eng_Ehab_Task.Controllers
             {
                 try
                 {
+                    if (_context.Governorates.Any(g => g.GovernorateName == governorate.GovernorateName && g.GovernorateID != governorate.GovernorateID))
+                    {
+                        ModelState.AddModelError("GovernorateName", "This Governorate already exists.");
+                        return View(governorate);
+                    }
                     _context.Update(governorate);
                     await _context.SaveChangesAsync();
                 }
@@ -88,6 +98,13 @@ namespace Eng_Ehab_Task.Controllers
             var governorate = await _context.Governorates.FindAsync(id);
             if (governorate != null)
             {
+                var cities = _context.Cities.Where(c => c.GovernorateID == id).ToList();
+                foreach (var city in cities)
+                {
+                    var villages = _context.Villages.Where(v => v.CityID == city.CityID).ToList();
+                    _context.Villages.RemoveRange(villages);
+                }
+                _context.Cities.RemoveRange(cities);
                 _context.Governorates.Remove(governorate);
                 await _context.SaveChangesAsync();
             }

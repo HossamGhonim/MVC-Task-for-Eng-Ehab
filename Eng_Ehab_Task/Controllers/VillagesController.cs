@@ -6,7 +6,7 @@ using Eng_Ehab_Task.Models;
 
 namespace Eng_Ehab_Task.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class VillagesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -44,6 +44,12 @@ namespace Eng_Ehab_Task.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (_context.Villages.Any(v => v.VillageName == village.VillageName && v.CityID == village.CityID))
+                {
+                    ModelState.AddModelError("VillageName", "This Village already exists in the selected City.");
+                    ViewData["CityID"] = new SelectList(_context.Cities, "CityID", "CityName", village.CityID);
+                    return View(village);
+                }
                 _context.Add(village);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -72,6 +78,12 @@ namespace Eng_Ehab_Task.Controllers
             {
                 try
                 {
+                    if (_context.Villages.Any(v => v.VillageName == village.VillageName && v.CityID == village.CityID && v.VillageID != village.VillageID))
+                    {
+                        ModelState.AddModelError("VillageName", "This Village already exists in the selected City.");
+                        ViewData["CityID"] = new SelectList(_context.Cities, "CityID", "CityName", village.CityID);
+                        return View(village);
+                    }
                     _context.Update(village);
                     await _context.SaveChangesAsync();
                 }

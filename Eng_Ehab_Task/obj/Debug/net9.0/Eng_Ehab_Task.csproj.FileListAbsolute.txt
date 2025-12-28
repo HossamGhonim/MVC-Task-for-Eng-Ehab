@@ -136,3 +136,4 @@ D:\Eng_Ehab_Task\Eng_Ehab_Task\Eng_Ehab_Task\obj\Debug\net9.0\Eng_Ehab_Task.pdb
 D:\Eng_Ehab_Task\Eng_Ehab_Task\Eng_Ehab_Task\obj\Debug\net9.0\Eng_Ehab_Task.genruntimeconfig.cache
 D:\Eng_Ehab_Task\Eng_Ehab_Task\Eng_Ehab_Task\obj\Debug\net9.0\ref\Eng_Ehab_Task.dll
 D:\Eng_Ehab_Task\Eng_Ehab_Task\Eng_Ehab_Task\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\Eng_Ehab_Task\Eng_Ehab_Task\Eng_Ehab_Task\obj\Debug\net9.0\Eng_Ehab_Task.sourcelink.json

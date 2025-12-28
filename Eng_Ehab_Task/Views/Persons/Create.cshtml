@@ -1,0 +1,156 @@
+@model Eng_Ehab_Task.Models.Person
+
+@{
+    ViewData["Title"] = "Create Person";
+}
+
+<h1>Create Person</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="SSN" class="control-label"></label>
+                <input asp-for="SSN" class="form-control" />
+                <span asp-validation-for="SSN" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Gender" class="control-label"></label>
+                <select asp-for="Gender" class="form-control">
+                    <option value="">Select Gender</option>
+                    <option value="Male">ذكر</option>
+                    <option value="Female">أنثى</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+
+             <div class="form-group mb-3">
+                <label asp-for="MilitaryStatus" class="control-label"></label>
+                <select asp-for="MilitaryStatus" class="form-control">
+                    <option value="">-- اختر الموقف من التجنيد --</option>
+                    <option value="إعفاء نهائي">إعفاء نهائي</option>
+                    <option value="إعفاء مؤقت">إعفاء مؤقت</option>
+                    <option value="تأجيل">تأجيل</option>
+                    <option value="أدى الخدمة العسكرية">أدى الخدمة العسكرية</option>
+                    <option value="لم يؤدى الخدمة العسكرية">لم يؤدى الخدمة العسكرية</option>
+                    <option value="أنثى ليس لها خدمة عسكرية">ليس لها خدمة عسكرية</option>
+
+                </select>
+                <span asp-validation-for="MilitaryStatus" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+
+             <div class="form-group mb-3">
+                <label asp-for="MaritalStatus" class="control-label"></label>
+                 <select asp-for="MaritalStatus" class="form-control">
+                    <option value="">Select Status</option>
+                    <option value="Single">أعزب</option>
+                    <option value="Married">متزوج</option>
+                    <option value="Divorced">مطلق</option>
+                     <option value="Widowed">أرمل</option>
+                </select>
+                <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="GovernorateID" class="control-label">Governorate</label>
+                <select asp-for="GovernorateID" class ="form-control" asp-items="ViewBag.GovernorateID" id="GovernorateList">
+                    <option value="">-- Select Governorate --</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="CityID" class="control-label">City</label>
+                <select asp-for="CityID" class="form-control" id="CityList">
+                    <option value="">-- Select City --</option>
+                </select>
+                <span asp-validation-for="CityID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="VillageID" class="control-label">Village</label>
+                <select asp-for="VillageID" class="form-control" id="VillageList">
+                    <option value="">-- Select Village --</option>
+                </select>
+                <span asp-validation-for="VillageID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            $("#GovernorateList").change(function () {
+                var govId = $(this).val();
+                $("#CityList").empty().append('<option value="">-- Select City --</option>');
+                $("#VillageList").empty().append('<option value="">-- Select Village --</option>');
+                
+                if (govId) {
+                    $.ajax({
+                        url: "/Cities/GetCitiesByGovernorate",
+                        type: "GET",
+                        data: { governorateId: govId },
+                        success: function (data) {
+                            $.each(data, function (index, item) {
+                                $("#CityList").append('<option value="' + item.value + '">' + item.text + '</option>');
+                            });
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Error fetching cities:", error);
+                        }
+                    });
+                }
+            });
+
+            $("#CityList").change(function () {
+                var cityId = $(this).val();
+                $("#VillageList").empty().append('<option value="">-- Select Village --</option>');
+                
+                if (cityId) {
+                    $.ajax({
+                        url: "/Villages/GetVillagesByCity",
+                        type: "GET",
+                        data: { cityId: cityId },
+                        success: function (data) {
+                            $.each(data, function (index, item) {
+                                $("#VillageList").append('<option value="' + item.value + '">' + item.text + '</option>');
+                            });
+                        },
+                        error: function (xhr, status, error) {
+                             console.error("Error fetching villages:", error);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
